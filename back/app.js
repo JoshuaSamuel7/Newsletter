@@ -4,6 +4,7 @@ const axios = require('axios');
 const cors=require("cors")
 const app = express();
 app.use(bodyParser.json());
+require('dotenv').config()
 app.use(cors(
     {
         origin:"http://localhost:3000"
@@ -32,11 +33,11 @@ app.post("/signup", function(req, res) {
 
     const jsonData = JSON.stringify(data);
 
-    const url = 'https://us21.api.mailchimp.com/3.0/lists/bd24b69610';
+    const url = process.env.URL;
     const options = {
         method: 'POST',
         headers: {
-            'Authorization': 'auth 0080267197c35d41f194205da0d4b948-us21',  
+            'Authorization': process.env.KEY,  
             'Content-Type': 'application/json'
         },
         data: jsonData,
