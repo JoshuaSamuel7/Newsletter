@@ -7,9 +7,12 @@ app.use(bodyParser.json());
 require('dotenv').config()
 app.use(cors(
     {
-        origin:"http://localhost:3000"
+        origin:"https://jsnewsletter.vercel.app"
     }
 ))
+app.get('/',(req,res)=>{
+    res.json("Hello");
+})
 app.post("/signup", function(req, res) {
     const firstn = req.body.first;
     const lastn = req.body.last;
