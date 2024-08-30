@@ -10,7 +10,7 @@ function Newsletter() {
     const [ph,setph]=useState('');
     function handleSubmit(e) {
         e.preventDefault();
-        axios.post("http://localhost:8000/signup",{first,last,email,address,ph})
+        axios.post("https://newsletter-server-woad.vercel.app/signup",{first,last,email,address,ph})
         .then(response=>{
             alert("Signup Successful")
             console.log(response.data);
