@@ -11,7 +11,7 @@ app.use(cors(
     }
 ))
 app.get('/',(req,res)=>{
-    res.json("Hello");
+    res.status(200).json("Hello");
 })
 
 app.post("/signup", function(req, res) {
