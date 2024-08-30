@@ -13,6 +13,9 @@ app.use(cors(
 app.get('/',(req,res)=>{
     res.status(200).json("Hello");
 })
+app.get("/api",(req,res)=>{
+    res.send("Hello")
+})
 
 app.post("/signup", function(req, res) {
     const firstn = req.body.first;
