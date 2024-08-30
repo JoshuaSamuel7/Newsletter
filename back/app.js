@@ -13,6 +13,7 @@ app.use(cors(
 app.get('/',(req,res)=>{
     res.json("Hello");
 })
+
 app.post("/signup", function(req, res) {
     const firstn = req.body.first;
     const lastn = req.body.last;
