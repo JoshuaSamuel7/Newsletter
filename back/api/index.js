@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 require('dotenv').config()
 app.use(cors(
     {
-        origin:"https://jsnewsletter.vercel.app/"
+        origin:"https://jsnewsletter.vercel.app"
     }
 ))
 app.get('/',(req,res)=>{
