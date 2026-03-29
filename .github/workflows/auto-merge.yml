@@ -1,0 +1,17 @@
+name: Auto Merge Dependabot
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'dependabot[bot]'
+
+    steps:
+      - name: Enable auto-merge for safe updates
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          merge-method: squash
